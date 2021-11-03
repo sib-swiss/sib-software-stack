@@ -1,0 +1,70 @@
+# List of EasyBuild easyconfigs to build.
+
+# IMPORTANT:
+#  * The easyconfig files must be listed in the correct order.
+#  * Lines starting with a '#' are treated as comments and ignored.
+#  * Use "SIB_EB_REPO" to force the use of an easyconfig from the "sib-easyconfig" repo.
+#  * Prefix a line with one or more comma-separated local node abbreviations (IBU, SCI, UBE, VIT)
+#    to build a package only for selected nodes.
+
+# Build GCC
+# The "GCC" easyconfig is a wrapper module for GCC and binutils.
+# Therefore it's simpler to build directly GCC rather than GCCcore.
+GCC-10.3.0.eb
+FFTW-3.3.9-gompi-2021a.eb
+
+# Build Python and R.
+Python-3.9.5-GCCcore-10.3.0.eb
+SciPy-bundle-2021.05-foss-2021a.eb
+
+# Build R.
+# Note: R's X11 and Xvfb dependencies are built first to avoid using too much space in /tmp.
+# For some reason, when building dependencies in a single command, EB keep the numerous X11
+# and Xvfb logs around and keeps adding the content logged during the R build to all of them.
+X11-20210518-GCCcore-10.3.0.eb
+Xvfb-1.20.11-GCCcore-10.3.0.eb
+R-4.1.0-foss-2021a.eb
+R-bundle-Bioconductor-3.13-foss-2021a-R-4.1.0.eb
+R-bundle-extraSIB-20210916-foss-2021a-R-4.1.0.eb
+
+# Build additional software.
+RDKit-2021.03.4-foss-2021a.eb
+SAMtools-1.13-GCC-10.3.0.eb
+HMMER2-2.3.2-GCC-10.3.0.eb
+HMMER-3.3.2-gompi-2021a.eb
+FastQC-0.11.9-Java-11.eb
+BLAST-2.2.26-Linux_x86_64.eb
+BLAST+-2.11.0-gompi-2021a.eb
+InChI-1.06-GCC-10.3.0.eb
+libSBML-5.19.0-GCC-10.3.0.eb
+BioPerl-1.7.8-GCCcore-10.3.0.eb
+RInChI-1.00-x86_64.eb
+ClustalW2-2.1-foss-2021a.eb
+EMBOSS-6.6.0-foss-2021a.eb
+Gurobi-9.5.0-GCCcore-10.3.0.eb
+CD-HIT-4.8.1-GCC-10.3.0.eb
+MAFFT-7.487-gompi-2021a-with-extensions.eb
+pftoolsV3-3.2.11-foss-2021a.eb
+InterProScan-5.54-87.0-foss-2021a.eb
+OpenBabel-3.1.1-gompi-2021a.eb
+Rgurobi-9.5.0-foss-2021a-R-4.1.0.eb
+Armadillo-10.7.5-foss-2021a.eb
+
+
+# SIB Lausanne specific
+VIT Chemaxon_Marvin-21.14.eb                                    # source only at Vital-IT
+VIT RDT-2.5.0-Java-11.eb
+VIT Virtuoso-opensource-7.2.6.1-GCC-10.3.0.eb
+VIT jacop-1.18-foss-2021a-R-4.1.0.eb
+VIT patsearch-1-GCCcore-10.3.0-Perl-5.32.1.eb
+VIT paralign-5.0.0-Linux_x86_64.eb
+VIT BTLib-0.20-GCCcore-10.3.0-Perl-5.32.1.eb
+VIT ESTScan-2.1-GCCcore-10.3.0-Perl-5.32.1.eb
+VIT ProtoGene-4.2.3-GCCcore-10.3.0-Perl-5.32.1.eb
+VIT MetaNetX_Perl-20210806-GCCcore-10.3.0-Perl-5.32.1.eb
+VIT MetaNetX_Python-20210826-GCCcore-10.3.0.eb
+
+# HUG specific
+HUG InterOp-1.1.23.eb
+HUG AGeNT-2.0.5.eb
+
