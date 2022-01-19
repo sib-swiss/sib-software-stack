@@ -1,0 +1,16 @@
+[config]
+modules-tool = Lmod
+buildpath = /home/vitsoft/eb_builddir/build
+sourcepath = /home/vitsoft/eb_builddir/sources
+robot-paths = /home/vitsoft/sib-software-stack.git/easyconfigs:/home/vitsoft/sib-easyconfigs.git/easybuild/easyconfigs
+installpath = /software7
+containerpath = /software7/containers
+# packagepath = /home/vitsoft/eb_root/packages
+# prefix = /home/vitsoft/eb_root
+# repositorypath = /home/vitsoft/eb_root/ebfiles_repo
+github-user = sib-software
+github-org = sib-swiss
+
+# Compilation options
+# job-cores = 4
+# optarch = march=sandybridge
