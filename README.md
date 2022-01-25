@@ -237,16 +237,17 @@ To test your stack-builder configuration, run: `sb.py build -s`.
 <br>
 
 ### System libraries
-When building some of the software, **installing a few system libraries is needed** (because some
-of the base system libraries are not ported to EasyBuild), or recommended (because the library is
-difficult to build with EasyBuild). However, these cases are relatively rare.
+For building certain software, EasyBuild requires **some base system libraries to be installed** on
+the build host. This is because these base system libraries are not ported to EasyBuild.
 
-As an example, when building `R 4.0.3` on a CentOS 7 machine, the following system dependencies
-have to be installed: `sudo yum install openssl-devel libibverbs.x86_64 rdma-core-devel`.
-
-Here is a list of system libraries that are recommended to be installed:
+Building the SIB software stack requires the following libraries to be installed on your system
+(note: this list might not be complete):
 * OpenSSL (with devel files).
 * Cairo (graphics library).
+* glibc-devel
+* glibc-static
+* rdma-core-devel
+* libibverbs
 
 
 <br>
@@ -462,10 +463,10 @@ pass successfully for your easyconfig.
    `--github-user=<GitHub user name> --github-org=sib-swiss` options to the `eb` command below).
 
    ```
-   eb --new-pr <easyconfig> <additional files>
+   eb --new-pr <easyconfig> <additional files> --pr-commit-msg <commit message>
 
    # Examples:
-   eb ---new-pr easybuild/easyconfigs/h/HMMER2/HMMER2-2.3.2-GCC-10.3.0.eb
+   eb ---new-pr easybuild/easyconfigs/h/HMMER2/HMMER2-2.3.2-GCC-10.3.0.eb --pr-commit-msg "Update HMMER2-2.3.2-GCC-10.3.0.eb: explain what changed"
    eb --github-user=sib-software --github-org=sib-swiss --new-pr easybuild/easyconfigs/i/InChI/InChI-1.06-GCC-10.3.0.eb easybuild/easyconfigs/i/InChI/InChI-1.06.patch
    ```
 
