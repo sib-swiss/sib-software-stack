@@ -61,6 +61,7 @@ Nextflow-22.04.0.eb
 Anaconda3-2022.05.eb
 Java-17.eb
 
+Jellyfish-2.3.0-GCC-10.3.0.eb
 
 # SIB Lausanne specific
 VIT R-bundle-extraSIB-20220204-foss-2021a-R-4.1.0.eb
