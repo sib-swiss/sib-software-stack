@@ -65,6 +65,7 @@ BWA-0.7.17-GCC-10.3.0.eb
 bamtofastq-1.4.0-GCCcore-10.3.0.eb
 BamTools-2.5.2-GCC-10.3.0.eb
 BEDTools-2.30.0-GCC-10.3.0.eb
+CellRanger-6.0.1.eb
 Jellyfish-2.3.0-GCC-10.3.0.eb
 Sambamba-0.8.2-GCC-10.3.0.eb
 
