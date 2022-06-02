@@ -75,6 +75,7 @@ minimap2-2.20-GCCcore-10.3.0.eb
 MUSCLE-5.0.1428-GCCcore-10.3.0.eb
 picard-2.25.5-Java-13.eb
 prokka-1.14.5-gompi-2021a.eb
+Racon-1.4.21-GCCcore-10.3.0.eb
 Sambamba-0.8.2-GCC-10.3.0.eb
 
 # SIB Lausanne specific
