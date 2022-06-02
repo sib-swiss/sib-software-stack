@@ -72,6 +72,7 @@ HTSlib-1.12-GCC-10.3.0.eb
 Java-1.8.0_311.eb
 Jellyfish-2.3.0-GCC-10.3.0.eb
 minimap2-2.20-GCCcore-10.3.0.eb
+MUSCLE-5.0.1428-GCCcore-10.3.0.eb
 Sambamba-0.8.2-GCC-10.3.0.eb
 
 # SIB Lausanne specific
