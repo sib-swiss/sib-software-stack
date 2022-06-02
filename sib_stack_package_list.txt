@@ -50,7 +50,7 @@ OpenBabel-3.1.1-gompi-2021a.eb
 Rgurobi-9.5.0-foss-2021a-R-4.1.0.eb
 Armadillo-10.7.5-foss-2021a.eb
 
-bamtofastq-1.4.0-GCCcore-10.3.0.eb
+bamtofastq-1.4.0-GCCcore-10.3.0-Rust-1.60.0.eb
 BamTools-2.5.2-GCC-10.3.0.eb
 BEDTools-2.30.0-GCC-10.3.0.eb
 BWA-0.7.17-GCC-10.3.0.eb
@@ -58,7 +58,7 @@ CellRanger-6.0.1.eb
 DIAMOND-2.0.13-GCC-10.3.0.eb
 Flye-2.9-GCC-10.3.0.eb
 HTSlib-1.12-GCC-10.3.0.eb
-Java-1.8.0_311.eb
+Java-17.0.1.eb
 Jellyfish-2.3.0-GCC-10.3.0.eb
 minimap2-2.20-GCCcore-10.3.0.eb
 MUSCLE-5.0.1428-GCCcore-10.3.0.eb
