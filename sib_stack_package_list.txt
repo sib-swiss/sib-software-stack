@@ -51,6 +51,7 @@ Rgurobi-9.5.0-foss-2021a-R-4.1.0.eb
 Armadillo-10.7.5-foss-2021a.eb
 
 Jellyfish-2.3.0-GCC-10.3.0.eb
+Sambamba-0.8.2-GCC-10.3.0.eb
 
 # SIB Lausanne specific
 VIT Chemaxon_Marvin-21.14.eb                                    # source only at Vital-IT
