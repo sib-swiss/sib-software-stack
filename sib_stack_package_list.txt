@@ -69,6 +69,7 @@ CellRanger-6.0.1.eb
 DIAMOND-2.0.13-GCC-10.3.0.eb
 Flye-2.9-GCC-10.3.0.eb
 HTSlib-1.12-GCC-10.3.0.eb
+Java-1.8.0_311.eb
 Jellyfish-2.3.0-GCC-10.3.0.eb
 Sambamba-0.8.2-GCC-10.3.0.eb
 
