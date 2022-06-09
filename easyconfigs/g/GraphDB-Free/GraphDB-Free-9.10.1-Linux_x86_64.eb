@@ -1,0 +1,39 @@
+##
+# This is a contribution from SIB Swiss Institute of Bioinformatics
+# Homepage:     https://www.sib.swiss/research-infrastructure/competence-centers/vital-it
+#
+# Authors::     Sebastien Moretti <sebastien.moretti@sib.swiss>
+#
+##
+easyblock = 'Binary'
+
+name = 'GraphDB-Free'
+version = '9.10.1'
+
+homepage = 'https://graphdb.ontotext.com/'
+description = """GraphDB is an enterprise ready Semantic Graph Database, compliant
+with W3C Standards. Semantic graph databases (also called RDF triplestores) provide
+the core infrastructure for solutions where modelling agility, data integration,
+relationship exploration and cross-enterprise data publishing and consumption are important."""
+# software_license = 'GraphDB-Free is free to use however, is not open source'
+
+toolchain = SYSTEM
+
+sources = ['graphdb-free-%(version)s-dist.zip']
+# source_urls = ['https://download.ontotext.com/owlim/b4ca62fe-4b8b-11ec-a600-42843b1b6b38/']
+checksums = ['fe08fce95b9190fa4a81792e588f4d953d84cc9bee947e420575a4a4151f1db0']
+
+dependencies = [
+    ('Java', '11'),
+]
+
+extract_sources = True
+
+sanity_check_paths = {
+    'files': ['bin/graphdb', 'README'],
+    'dirs': ['adapters', 'benchmark', 'bin', 'conf', 'configs', 'doc', 'examples', 'lib'],
+}
+
+sanity_check_commands = ["graphdb -h"]
+
+moduleclass = 'data'
