@@ -9,7 +9,7 @@
 easyblock = 'PythonBundle'
 
 name = 'MetaNetX_Python'
-version = '20210826'
+version = '20220204'
 
 homepage = 'https://www.metanetx.org/'
 description = """Python requirements for Vital-IT, mainly for the MetaNetX project."""
@@ -35,12 +35,19 @@ dependencies = [
     ('sympy',             '1.8',       '', ('foss', '2021a')),
     ('typing-extensions', '3.10.0.0'),
     ('tqdm',              '4.61.2'),
+    ('libxml2',           '2.9.10'),
+    ('libxslt',           '1.1.34'),
+    ('InChI',             '1.06',      '', ('GCC',  '10.3.0')),
+    ('RDT',               '2.5.0',     '', ('Java', '11')),
+    ('openpyxl',          '3.0.7'),
+    ('SciPy-bundle',      '2021.05',   '', ('foss', '2021a')),
 ]
 
 use_pip = True
 
 # Looks to fetch the tar.gz, not the whl files!
 # Main libraries to install are cobra, memote and equilibrator_api
+# + CGRtools + ehreact + SBtab
 exts_list = [
     ('optlang', '1.5.2', {
         'checksums': ['5514364aa06bf24381c6777188b2df79b13def2743312bdb80277392cdbb6477'],
@@ -183,6 +190,51 @@ exts_list = [
         'modulename': 'equilibrator_api',
         'checksums': ['86cbf26d65a6ec84cae89be9e733383e5858a203cd46d967c2cc2381e1e246c1'],
     }),
+    ('CachedMethods', '0.1.4', {
+        'modulename': 'CachedMethods',
+        'source_tmpl': 'CachedMethods-%(version)s-py3-none-any.whl',
+        'checksums': ['e00f9734d4699ddd65ed39e6a4887e38d63a521e4a02fa1406e71b9cfa851438'],
+    }),
+    ('CGRtools', '4.1.34', {
+        'modulename': 'CGRtools',
+        'checksums': ['e33d6b05ea91ddc56d4055a945cc5fdaaf147680bb7ca79c12e54567b1384ca2'],
+        # NOTE usage of a properly compiled libinchi.so (with rpath) is done as postinstallcmds
+    }),
+    ('mypy-extensions', '0.4.3', {
+        'modulename': 'mypy_extensions',
+        'source_tmpl': 'mypy_extensions-%(version)s.tar.gz',
+        'checksums': ['2d82818f5bb3e369420cb3c4060a7970edba416647068eb4c5343488a6c604a8'],
+    }),
+    ('typing-inspect', '0.7.1', {
+        'modulename': 'typing_inspect',
+        'source_tmpl': 'typing_inspect-%(version)s.tar.gz',
+        'checksums': ['047d4097d9b17f46531bf6f014356111a1b6fb821a24fe7ac909853ca2a782aa'],
+    }),
+    ('typed-argument-parser', '1.7.2', {
+        'modulename': 'tap',
+        'checksums': ['4e44bc79010391cd9dec4b110e1474fedc8919138e93ca91222ea6b3b360daee'],
+    }),
+    ('ehreact', '20211201', {
+        'source_urls': ['https://github.com/hesther/ehreact/archive/refs/heads'],
+        'source_tmpl': 'main.tar.gz',
+        'checksums': ['d202824a7971fdf70812d99f9f16e738b8195a77157b8a9731c1dc09777bd413'],
+        # See https://github.com/hesther/ehreact/tree/main/ReactionDecoder to add RDT support
+        'preinstallopts': "mkdir %(installdir)s/lib/python%(pyshortver)s/site-packages/ReactionDecoder && "
+                          "ln -s $EBROOTRDT/RDT.jar "
+                          "%(installdir)s/lib/python%(pyshortver)s/site-packages/ReactionDecoder/ReactionDecoder.jar"
+                          " && ",
+        # See https://github.com/hesther/ehreact#installation-of-optional-packages to plot Hasse diagrams
+        # It needs "Graphviz" and "librsvg"
+    }),
+    ('sbtab', '1.0.6', {
+        'checksums': ['c1832a8b597e4aba217c486ea81697391bf6a21eb8352a850add98a3ece038f2'],
+        # TODO need to copy/link scripts in bin/, but they are NOT in the pip archive, only in github!
+    }),
+]
+
+postinstallcmds = [
+    'rm -f %(installdir)s/lib/libinchi.so',
+    'ln -s $EBROOTINCHI/lib/libinchi.so %(installdir)s/lib/',
 ]
 
 sanity_check_paths = {
