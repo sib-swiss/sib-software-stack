@@ -1,0 +1,62 @@
+##
+# This is a contribution from SIB Swiss Institute of Bioinformatics
+# Homepage:     https://www.sib.swiss/research-infrastructure/competence-centers/vital-it
+#
+# Authors::     Sebastien Moretti <sebastien.moretti@sib.swiss>
+#
+##
+
+easyblock = 'Binary'
+
+name = 'OracleInstantClient'
+version = '21.5.0.0.0'
+# Requires glibc 2.14+
+
+homepage = 'https://www.oracle.com/database/technologies/instant-client.html'
+description = """Oracle Instant Client enables development and deployment of applications
+that connect to Oracle Database, either on-premise or in the Cloud. The Instant Client
+libraries provide the necessary network connectivity and advanced data features to make
+full use of Oracle Database. The libraries are used by the Oracle APIs of popular languages
+and environments including Python, Node.js, Go, PHP and Ruby, as well as providing access
+for Oracle Call Interface (OCI), Oracle C++ Call Interface (OCCI), JDBC OCI, ODBC and Pro*C
+applications. Tools included in Instant Client, such as SQL*Plus, SQL*Loader and Oracle Data
+Pump, provide quick and convenient data access."""
+
+software_license = 'LicenseVeryRestrictive'
+# Oracle Free Use Terms and Conditions
+
+toolchain = SYSTEM
+
+builddependencies = [
+    ('UnZip', '6.0', '', ('GCCcore', '10.3.0')),
+]
+
+source_urls = ['https://download.oracle.com/otn_software/linux/instantclient/%s' % version.replace('.', '')]
+sources = [
+    'instantclient-basic-linux.x64-%(version)sdbru.zip',
+    'tnsnames.ora'
+]
+checksums = [
+    '25428f2aef72f809bd8ea5a3ea7ac9e2700d29a0082575e9cd63eed6fa9f083e',  # instan...-linux.x64-21.5.0.0.0dbru.zip
+    '4432b4fa8331886873fc4a2fd6b55d0a2a3b08b6f04594371f10361f953758e8',  # tnsnames.ora
+]
+
+extract_sources = False
+
+install_cmd = 'unzip ' + sources[0] + ' && '
+install_cmd += 'cp -ar tnsnames.ora instantclient_*/* %(installdir)s/ && '
+install_cmd += 'find %(installdir)s/ -type f -name \*.ora  -exec chmod -x {} \;'
+
+sanity_check_paths = {
+    'files': ['libclntsh.so', 'libclntshcore.so', 'libocci.so'],
+    'dirs': ['network']
+}
+
+# also include top install directory in $PATH, to make some tools available
+modextrapaths = {
+    'PATH':        '',
+    'ORACLE_HOME': '',
+    'TNS_ADMIN':   '',
+}
+
+moduleclass = 'devel'
