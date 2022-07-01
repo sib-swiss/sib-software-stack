@@ -49,6 +49,7 @@ OpenBabel-3.1.1-gompi-2021a.eb
 Rgurobi-9.5.0-foss-2021a-R-4.1.0.eb
 Armadillo-10.7.5-foss-2021a.eb
 AUGUSTUS-3.4.0-foss-2021a.eb
+BWA-0.7.17-GCC-10.3.0.eb
 snakemake-6.6.1-foss-2021a.eb
 Nextflow-22.04.0.eb
 Anaconda3-2022.05.eb
