@@ -55,6 +55,7 @@ FastANI-1.33-GCC-10.3.0.eb
 MaSuRCA-4.0.9-foss-2021a-Perl-5.32.1.eb
 BUSCO-5.4.2-foss-2021a.eb
 Infernal-1.1.4-foss-2021a.eb
+InParanoid-5.0-20220607-GCC-10.3.0.eb
 snakemake-6.6.1-foss-2021a.eb
 Nextflow-22.04.0.eb
 Anaconda3-2022.05.eb
