@@ -59,6 +59,7 @@ InParanoid-5.0-20220607-GCC-10.3.0.eb
 snakemake-6.6.1-foss-2021a.eb
 Nextflow-22.04.0.eb
 Anaconda3-2022.05.eb
+Java-17.eb
 
 
 # SIB Lausanne specific
