@@ -67,7 +67,7 @@ VIT R-bundle-extraSIB-20220204-foss-2021a-R-4.1.0.eb
 VIT Chemaxon_Marvin-21.14.eb                                    # source only at Vital-IT
 VIT RDT-2.5.0-Java-11.eb
 VIT Virtuoso-opensource-7.2.6.1-GCC-10.3.0.eb
-VIT GraphDB-Free-9.10.1-Linux_x86_64.eb
+VIT GraphDB-10.1.3.eb
 VIT jacop-1.18-foss-2021a-R-4.1.0.eb
 VIT patsearch-1-GCCcore-10.3.0-Perl-5.32.1.eb
 VIT paralign-5.0.0-Linux_x86_64.eb
