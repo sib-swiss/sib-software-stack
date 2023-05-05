@@ -80,5 +80,5 @@ VIT OracleInstantClient-21.5.0.0.0.eb
 
 # HUG specific
 HUG InterOp-1.1.23.eb
-HUG AGeNT-2.0.5.eb
+HUG AGeNT-3.0.6.eb
 
