@@ -60,7 +60,7 @@ snakemake-6.6.1-foss-2021a.eb
 Nextflow-22.04.0.eb
 Anaconda3-2022.05.eb
 Java-17.eb
-bamtofastq-1.4.0-GCCcore-10.3.0-Rust-1.60.0.eb
+bamtofastq-1.4.0-GCCcore-10.3.0.eb
 BamTools-2.5.2-GCC-10.3.0.eb
 BEDTools-2.30.0-GCC-10.3.0.eb
 CellRanger-6.1.2.eb
