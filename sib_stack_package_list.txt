@@ -72,7 +72,7 @@ HTSlib-1.12-GCC-10.3.0.eb
 Java-17.0.1.eb
 Jellyfish-2.3.0-GCC-10.3.0.eb
 minimap2-2.20-GCCcore-10.3.0.eb
-MUSCLE-5.0.1428-GCCcore-10.3.0.eb
+MUSCLE-5.1.0-GCCcore-10.3.0.eb
 picard-2.25.5-Java-13.eb
 prokka-1.14.5-gompi-2021a.eb
 Racon-1.4.21-GCCcore-10.3.0.eb
