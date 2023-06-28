@@ -93,6 +93,7 @@ kallisto-0.48.0-gompi-2021a.eb
 MACS2-2.2.7.1-foss-2021a.eb
 AnADAMA2-0.10.0-foss-2021a.eb
 RepeatMasker-4.1.5-foss-2021a.eb
+EDirect-19.7.20230531-GCCcore-10.3.0.eb
 
 # SIB Lausanne specific
 VIT Chemaxon_Marvin-21.14.eb                                  # source only at Vital-IT
