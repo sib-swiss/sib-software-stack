@@ -82,6 +82,7 @@ SRA-Toolkit-2.10.9-gompi-2020b.eb
 Trimmomatic-0.39-Java-11.eb
 VCFtools-0.1.16-GCC-10.3.0.eb
 Kraken2-2.1.2-gompi-2021a.eb
+purge_dups-1.2.5-foss-2021b.eb
 
 # SIB Lausanne specific
 VIT R-bundle-extraSIB-20220204-foss-2021a-R-4.1.0.eb
