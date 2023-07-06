@@ -86,6 +86,7 @@ purge_dups-1.2.5-foss-2021b.eb
 MCL-14.137-GCCcore-10.3.0.eb
 vt-0.57721-GCC-10.3.0.eb
 alevin-fry-0.4.3-GCCcore-11.2.0.eb
+STAR-2.7.10a_alpha_220601-GCC-10.3.0.eb
 
 # SIB Lausanne specific
 VIT R-bundle-extraSIB-20220204-foss-2021a-R-4.1.0.eb
