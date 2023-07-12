@@ -118,7 +118,7 @@ exts_list = [
     ('rcdk', '3.6.0', {
         'checksums': ['9dd1978af1f8a930ab1ecad123395b1c31f58669d2e771951e9766280009716c'],
     }),
-    ('sodium','1.2.0',{
+    ('sodium', '1.2.0', {
         'checksums': ['b8d83a65bbcc59398626b92322ed5164094f21ba3d3119fed561dbe0d8589274'],
     }),
     ('biglm', '0.9-2.1', {
