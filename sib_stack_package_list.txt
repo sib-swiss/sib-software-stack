@@ -63,7 +63,7 @@ Java-17.eb
 bamtofastq-1.4.0-GCCcore-10.3.0.eb
 BamTools-2.5.2-GCC-10.3.0.eb
 BEDTools-2.30.0-GCC-10.3.0.eb
-CellRanger-6.1.2.eb
+CellRanger-7.1.0.eb
 DIAMOND-2.0.13-GCC-10.3.0.eb
 Flye-2.9-GCC-10.3.0.eb
 hifiasm-0.15.2-GCCcore-10.3.0.eb
