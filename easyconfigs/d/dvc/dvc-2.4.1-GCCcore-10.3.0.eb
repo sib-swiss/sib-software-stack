@@ -1,0 +1,123 @@
+##
+# This is a contribution from SIB Swiss Institute of Bioinformatics
+# Homepage:     https://www.sib.swiss/research-infrastructure/competence-centers/vital-it
+#
+# Authors::     Sebastien Moretti <sebastien.moretti@sib.swiss>
+#
+##
+
+easyblock = 'PythonBundle'
+
+name = 'dvc'
+version = '2.4.1'
+
+homepage = 'https://dvc.org/'
+description = """(Not Just) Data Version Control"""
+# software_license = 'LicenseApachev2'
+
+toolchain = {'name': 'GCCcore', 'version': '10.3.0'}
+
+dependencies = [
+    ('Python',            '3.9.5'),
+    ('git',               '2.32.0',  '-nodocs'),
+    ('OpenSSL',           '1.1',     '', True),
+    ('Rust',              '1.60.0'),
+    ('boto3',             '1.20.13'),
+    ('GitPython',         '3.1.18'),
+    ('networkx',          '2.5.1',   '', ('foss', '2021a')),
+    ('PyYAML',            '5.4.1'),
+    ('ruamel.yaml',       '0.17.21'),
+    ('SciPy-bundle',      '2021.05', '', ('foss', '2021a')),
+    ('tqdm',              '4.61.2'),
+    ('typing-extensions', '4.4.0'),
+]
+
+use_pip = True
+
+# currently only support http/https + s3 remotes
+exts_list = [
+    ('asyncssh', '2.13.2', {
+        'checksums': ['991e531c4bb7dbec62b754878d96a3246338aac11a28ce3c3e99018fb2f5828c'],
+    }),
+    ('sshfs', '2023.4.1', {
+        'checksums': ['d4aba679144e5bc47491395b929c48450daa13738986b41959e1d3673addff7c'],
+    }),
+    ('wrapt', '1.15.0', {
+        'checksums': ['d06730c6aed78cee4126234cf2d071e01b44b915e725a6cb439a879ec9754a3a'],
+    }),
+    ('charset-normalizer', '3.2.0', {
+        'modulename': 'charset_normalizer',
+        'checksums': ['3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace'],
+    }),
+    ('yarl', '1.9.2', {
+        'checksums': ['04ab9d4b9f587c06d801c2abfe9317b77cdf996c65a90d5e84ecc45010823571'],
+    }),
+    ('multidict', '6.0.4', {
+        'checksums': ['3666906492efb76453c0e7b97f2cf459b0682e7402c0489a95484965dbc1da49'],
+    }),
+    ('aiohttp', '3.8.4', {
+        'checksums': ['bf2e1a9162c1e441bf805a1fd166e249d574ca04e03b34f97e2928769e91ab5c'],
+    }),
+    ('frozenlist', '1.4.0', {
+        'checksums': ['09163bdf0b2907454042edb19f887c6d33806adc71fbd54afc14908bfdc22251'],
+    }),
+    ('aiosignal', '1.3.1', {
+        'checksums': ['54cd96e15e1649b75d6c87526a6ff0b6c1b0dd3459f43d9ca11d48c339b68cfc'],
+    }),
+    ('async-timeout', '4.0.2', {
+        'modulename': 'async_timeout',
+        'checksums': ['2163e1640ddb52b7a8c80d0a67a08587e5d245cc9c553a74a847056bc2976b15'],
+    }),
+    ('aioitertools', '0.11.0', {
+        'checksums': ['42c68b8dd3a69c2bf7f2233bf7df4bb58b557bca5252ac02ed5187bbc67d6831'],
+    }),
+    ('aiobotocore', '1.3.0', {
+        'checksums': ['81890d270b1f948ffd218e8bab11e235bea272840ea8b1b9e0aef1954c6cec9e'],
+    }),
+    ('s3fs', '2021.6.0', {
+        'checksums': ['53790061e220713918602c1f110e6a84d6e3e22aaba27b8e134cc56a3ab6284c'],
+    }),
+    ('fsspec', '2021.6.0', {
+        'checksums': ['931961514c67acab86519ca16985491e639ebf992dbc3a1aae24d44202b52426'],
+    }),
+    ('voluptuous', '0.13.1', {
+        'checksums': ['e8d31c20601d6773cb14d4c0f42aee29c6821bbd1018039aac7ac5605b489723'],
+    }),
+    ('zc.lockfile', '3.0.post1', {
+        'checksums': ['adb2ee6d9e6a2333c91178dcb2c9b96a5744c78edb7712dc784a7d75648e81ec'],
+    }),
+    ('atpublic', '4.0', {
+        'source_tmpl': 'atpublic-%(version)s-py3-none-any.whl',  # Issue with the tarball
+        'checksums': ['80057c55641253b86dcb68b524f82328172371b6547d4c7462a9127fbfbbabfc'],
+        'modulename': 'public',
+    }),
+    ('flufl.lock', '3.2', {
+        'checksums': ['a8d66accc9ab41f09961cd8f8db39f9c28e97e2769659a3567c63930a869ff5b'],
+    }),
+    ('pygtrie', '2.3.2', {
+        'checksums': ['6299cdedd2cbdfda0895c2dbc43efe8828e698c62b574f3ef7e14b3253f80e23'],
+    }),
+    ('pathspec', '0.9.0', {
+        'checksums': ['e564499435a2673d586f6b2130bb5b95f04a3ba06f81b8f895b651a3c76aabb1'],
+    }),
+    ('funcy', '1.17', {
+        'checksums': ['40b9b9a88141ae6a174df1a95861f2b82f2fdc17669080788b73a3ed9370e968'],
+    }),
+    ('shtab', '1.6.2', {
+        'source_tmpl': 'shtab-%(version)s-py3-none-any.whl',  # Issue with the tarball
+        'checksums': ['a1f0b9693c2e3b5c6933783fb356cd8c80896960a97a6acdc258bf2ac31fe11d'],
+    }),
+    (name, version, {
+        'use_pip_extras': 'all',
+        'checksums': ['6fd5cd2b347ff16d91931de2db4b0ed70f5e352235732dbcb55acd75650c9c67'],
+    }),
+]
+
+sanity_check_paths = {
+    'files': ['bin/dvc'],
+    'dirs': ['lib/python%(pyshortver)s/site-packages'],
+}
+
+sanity_check_commands = ["dvc --version && dvc doctor"]
+
+moduleclass = 'tools'
