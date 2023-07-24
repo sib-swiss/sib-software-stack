@@ -89,6 +89,7 @@ STAR-2.7.10a_alpha_220601-GCC-10.3.0.eb
 MultiQC-1.11-foss-2021a.eb
 Salmon-1.4.0-GCC-10.3.0.eb
 kallisto-0.48.0-gompi-2021a.eb
+MACS2-2.2.7.1-foss-2021a.eb
 
 # SIB Lausanne specific
 VIT R-bundle-extraSIB-20220204-foss-2021a-R-4.1.0.eb
