@@ -10,6 +10,7 @@ containerpath = /software7/containers
 # repositorypath = /home/vitsoft/eb_root/ebfiles_repo
 github-user = sib-software
 github-org = sib-swiss
+git-working-dirs-path=/home/vitsoft
 
 # Compilation options
 # job-cores = 4
