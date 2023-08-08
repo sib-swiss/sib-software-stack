@@ -98,7 +98,7 @@ RepeatMasker-4.1.5-foss-2021a.eb
 EDirect-19.7.20230531-GCCcore-10.3.0.eb
 
 # SIB Lausanne specific
-VIT Chemaxon_Marvin-21.14.eb                                  # source only at Vital-IT
+VIT Chemaxon-Marvin-21.14.eb                                  # source only at Vital-IT
 VIT RDT-2.5.0-Java-11.eb
 VIT Virtuoso-opensource-7.2.6.1-GCC-10.3.0.eb
 VIT GraphDB-10.1.5.eb
