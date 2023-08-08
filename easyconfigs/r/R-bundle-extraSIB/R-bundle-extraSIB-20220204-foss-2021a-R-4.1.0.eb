@@ -16,10 +16,10 @@ builddependencies = [
 
 dependencies = [
     ('R-bundle-Bioconductor', '3.13', versionsuffix),
-    ('GLPK',                  '5.0'),  # for glpkAPI
-    ('libSBML',               '5.19.0'),  # for sybilSBML
+    ('GLPK',                  '5.0'),                   # for glpkAPI
+    ('libSBML',               '5.19.0'),                # for sybilSBML
     ('Rgurobi',               '9.1.2', versionsuffix),  # for sybilGUROBI
-    ('libsodium',             '1.0.18'), # for sodium
+    ('libsodium',             '1.0.18'),                # for sodium
 ]
 
 exts_default_options = {
@@ -39,15 +39,15 @@ exts_default_options = {
 
 exts_defaultclass = 'RPackage'
 
-# check whether correct version is installed in extension filter
-# (some versions in this bundle may be newer than the ones provided by R)
+# Check whether correct version is installed in extension filter, as some
+# versions in this bundle may be newer than the ones provided by R.
 local_ext_version_check = "pkgver = packageVersion('%(ext_name)s'); if (pkgver != '%(ext_version)s') "
 local_stop_msg = "stop('%(ext_name)s %(ext_version)s not installed, found ', pkgver, ' instead')"
 exts_filter = ("R -q --no-save", "%s { %s }" % (local_ext_version_check, local_stop_msg))
 
-# CRAN packages on which these Bioconductor packages depend are available in R module on which this depends
+# CRAN packages on which these Bioconductor packages depend are available in
+# the R module on which this depends. Packages updated on 16th Sept 2021
 # !! order of packages is important !!
-# packages updated on 16th Sept 2021
 exts_list = [
     ('philentropy', '0.5.0', {
         'checksums': ['b39e9a825458f3377e23b2a133180566780e89019e9d22a6a5b7ca87c49c412f'],
@@ -121,10 +121,19 @@ exts_list = [
     ('sodium','1.2.0',{
         'checksums': ['b8d83a65bbcc59398626b92322ed5164094f21ba3d3119fed561dbe0d8589274'],
     }),
+    ('biglm', '0.9-2.1', {
+        'checksums': ['6dcf3c9e7c3f56cdaac94cc0c427f606880467e1e753fe7ea45c10bc44eec947'],
+    }),
+    ('cplm', '0.7-11', {
+        'checksums': ['95637d756e98037de1b45df0be28081770323fa32cf11bd1ddd3eca0a62e985d'],
+    }),
+    ('logging', '0.10-108', {
+        'checksums': ['85c91aa5a313f5f9fbb0394cda3f924a2495cca3cc5cd68dde0695fe3c20ed8d'],
+    }),
 ]
 # clpAPI, still useful?
-# lettercase has been removed from CRAN
-# muti is not in CRAN or BioConductor
+# lettercase has been removed from CRAN.
+# muti is not in CRAN or BioConductor.
 
 modextrapaths = {'R_LIBS_SITE': ''}
 
