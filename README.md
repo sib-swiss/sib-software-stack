@@ -307,10 +307,16 @@ installed on your system (note: this list might not be complete):
 in the order they should be built (top to bottom). Software packages are
 identified by their easyconfig file name.
 
-To add a new software package to the SIB software stack, the name of its
-easyconfig file must be added to this file.
+**Tip:** for local development purposes, you can override the content of
+`sib_stack_package_list.txt` by creating a file named `package_list.txt`. This
+allows e.g. to build only a subset of the entire `sib_stack_package_list.txt`
+file content.
 
-When the file is parsed by the stack-builder tool, the following rules are applied:
+To add a new software package to the SIB software stack, the name of its
+easyconfig file must be added to `sib_stack_package_list.txt`.
+
+When the file is parsed by the stack-builder tool, the following rules are
+applied:
 
 * Text located after a `#` (comments) and empty lines are ignored.
 * Software packages are built in the order they appear in the file, from top to
@@ -559,17 +565,20 @@ that all CI/CD tests pass successfully for your easyconfig.
     eb --new-pr <easyconfig> <additional files> --pr-commit-msg <commit message>
 
     # Examples:
-    eb ---new-pr easybuild/easyconfigs/h/HMMER2/HMMER2-2.3.2-GCC-10.3.0.eb --pr-commit-msg "Update HMMER2-2.3.2-GCC-10.3.0.eb: explain what changed"
+    eb --new-pr easybuild/easyconfigs/h/HMMER2/HMMER2-2.3.2-GCC-10.3.0.eb --pr-commit-msg "Update HMMER2-2.3.2-GCC-10.3.0.eb: explain what changed"
     eb --github-user=sib-software --github-org=sib-swiss --new-pr easybuild/easyconfigs/i/InChI/InChI-1.06-GCC-10.3.0.eb easybuild/easyconfigs/i/InChI/InChI-1.06.patch
     ```
 
 3. If the PR was submitted correctly, you should find it in the
    [Pull requests section](https://github.com/easybuilders/easybuild-easyconfigs/pulls)
-   of the official EasyBuild repo.
+   of the official EasyBuild repo (a direct link to the PR is also given in the
+   output of the command).
 
    A PR will also create a new Git branch in the `sib-easyconfigs` repo. These
    branches have a naming scheme that looks like:
-   `20211021150134_new_pr_SAMtools115` (here for SAMtools 1.1.5).
+   `20211021150134_new_pr_SAMtools115` (here for SAMtools 1.1.5). Note that
+   you will need to perform a `git fetch` before you can see this branch as a
+   remote branch pointer in your local Git repository.
 
 4. After the PR is submitted, someone from the EasyBuild team will review it
    (this can take a while), and either merge it to the main `develop` branch of
@@ -578,7 +587,7 @@ that all CI/CD tests pass successfully for your easyconfig.
    activity on the PR.
 
 5. If a PR was submitted and should be updated (e.g. to fix a problem), the
-   `--update-pr` command can be used. When using `--update-pr`, the PR number
+   `--update-pr` command must be used. When using `--update-pr`, the PR number
    (found on GitHub) must be passed to the command.
    In addition, it is also necessary to pass the `--pr-commit-msg` option and
    give it a commit message that explains why the change was made.
@@ -601,8 +610,8 @@ that all CI/CD tests pass successfully for your easyconfig.
 
 7. Once a PR is merged by the EasyBuild team, its Git branch can be deleted:
    either via the PR's GitHub page - example
-   [here for a SAMtools PR](https://github.com/easybuilders/easybuild-easyconfigs/pull/14185)
-   , or via command line.
+   [here for a SAMtools PR](https://github.com/easybuilders/easybuild-easyconfigs/pull/14185),
+   or via command line.
 
    ```sh
    git push origin --delete <PR branch name>
@@ -621,7 +630,7 @@ following one-time setup must be performed. Additional info can be found
    `eb --new-pr`).
 
    ```sh
-   pip3 install --user pep8 GitPython keyring keyrings.cryptfile jeepney keyring_jeepney
+   pip3 install --user keyring GitPython
    ```
 
 2. If needed, **create a GitHub personal access token (PAT)** for your GitHub
@@ -641,19 +650,27 @@ following one-time setup must be performed. Additional info can be found
    **Important:** the GitHub user name and organization must be entered all in
    lower case!
 
-   Alternatively, one can also pass the options `--github-user=<user name> --github-org=sib-swiss`
-   to the `eb` command.
+   Alternatively, one can also pass the options
+   `--github-user=<user name> --github-org=sib-swiss` to the `eb` command.
 
 4. **Install the GitHub PAT**. During this step, EasyBuild will ask you to
    enter the personal access token (PAT) you created earlier.
 
    ```sh
    eb --install-github-token
-   eb --check-github --git-working-dirs-path=/home/vitsoft
+
+   # Check all is setup correctly for making pull-requests to GitHub.
+   eb --check-github
    ```
 
-   Note: the encrypted keyring storing the PAT is located at:
-   `~/.local/share/python_keyring/cryptfile_pass.cfg`
+   Notes:
+   * Make sure you have set the parameter `git-working-dirs-path` in your
+     EasyBuild config file. It should point to the parent directory of the
+     `sib-easyconfigs.git` repo.
+     Alternatively, this value can also be passed on the command line with
+     `--git-working-dirs-path`.
+   * The encrypted keyring storing the PAT is located at:
+     `~/.local/share/python_keyring/cryptfile_pass.cfg`
 
 <br>
 <br>
@@ -676,6 +693,15 @@ Whenever possible, the recommended way to update the `sib-easyconfigs` and
 
 ```sh
 sb.py update
+```
+
+Adding the `--from-upstream` option will additionally update the remote and
+local copies of the `sib-easyconfigs` repository with the updates that have
+been added in the upstream repo (i.e. the official easybuild repo). This is
+how we maintain our fork of the repository up-to-date.
+
+```sh
+sb.py update --from-upstream
 ```
 
 ### Manual update
