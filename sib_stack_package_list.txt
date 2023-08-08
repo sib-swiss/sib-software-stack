@@ -64,8 +64,6 @@ Java-17.eb
 bamtofastq-1.4.0-GCCcore-10.3.0.eb
 BamTools-2.5.2-GCC-10.3.0.eb
 BEDTools-2.30.0-GCC-10.3.0.eb
-CellRanger-6.1.2.eb
-CellRanger-7.1.0.eb
 DIAMOND-2.0.13-GCC-10.3.0.eb
 DIAMOND-2.1.8-GCC-10.3.0.eb
 Flye-2.9-GCC-10.3.0.eb
@@ -97,7 +95,11 @@ AnADAMA2-0.10.0-foss-2021a.eb
 RepeatMasker-4.1.5-foss-2021a.eb
 EDirect-19.7.20230531-GCCcore-10.3.0.eb
 
-# SIB Lausanne specific
+# Softs with source requiring manual download.
+CellRanger-6.1.2.eb
+CellRanger-7.1.0.eb
+
+# SIB Lausanne specific.
 VIT Chemaxon-Marvin-21.14.eb                                  # source only at Vital-IT
 VIT RDT-2.5.0-Java-11.eb
 VIT Virtuoso-opensource-7.2.6.1-GCC-10.3.0.eb
@@ -112,7 +114,7 @@ VIT MetaNetX_Perl-20210806-GCCcore-10.3.0-Perl-5.32.1.eb
 VIT MetaNetX_Python-20220204-GCCcore-10.3.0.eb
 VIT OracleInstantClient-21.5.0.0.0.eb
 
-# HUG specific
+# HUG specific.
 HUG InterOp-1.1.23.eb
 HUG AGeNT-3.0.6.eb
 
