@@ -1,0 +1,128 @@
+easyblock = 'Bundle'
+
+name = 'R-bundle-Bioconductor'
+version = '3.15'
+versionsuffix = '-R-%(rver)s'
+
+homepage = 'https://bioconductor.org'
+description = """Bioconductor provides tools for the analysis and coprehension
+ of high-throughput genomic data."""
+
+toolchain = {'name': 'foss', 'version': '2021a'}
+
+# lpsymphony fails to build with pkgconf, so stick to pkg-config
+# error in: https://github.com/easybuilders/easybuild-easyconfigs/pull/15829#issuecomment-1178655286
+builddependencies = [('pkg-config', '0.29.2')]
+
+dependencies = [
+    ('R', '4.2.1'),
+    ('Boost', '1.76.0'),  # for mzR
+    ('GSL', '2.7'),  # for flowClust
+    ('HDF5', '1.10.7'),  # for rhdf5
+    ('arrow-R', '8.0.0', versionsuffix),  # required by RcisTarget
+]
+
+exts_default_options = {
+    'source_urls': [
+        'https://bioconductor.org/packages/3.15/bioc/src/contrib/',
+        'https://bioconductor.org/packages/3.15/bioc/src/contrib/Archive/%(name)s',
+        'https://bioconductor.org/packages/3.15/data/annotation/src/contrib/',
+        'https://bioconductor.org/packages/3.15/data/experiment/src/contrib/',
+        'https://cran.r-project.org/src/contrib/Archive/%(name)s',  # package archive
+        'https://cran.r-project.org/src/contrib/',  # current version of packages
+        'https://cran.freestatistics.org/src/contrib',  # mirror alternative for current packages
+    ],
+    'source_tmpl': '%(name)s_%(version)s.tar.gz'
+}
+
+exts_defaultclass = 'RPackage'
+
+# check whether correct version is installed in extension filter
+# (some versions in this bundle may be newer than the ones provided by R)
+local_ext_version_check = "pkgver = packageVersion('%(ext_name)s'); if (pkgver != '%(ext_version)s') "
+local_stop_msg = "stop('%(ext_name)s %(ext_version)s not installed, found ', pkgver, ' instead')"
+exts_filter = ("R -q --no-save", "%s { %s }" % (local_ext_version_check, local_stop_msg))
+
+# CRAN packages on which these Bioconductor packages depend are available in R module on which this depends
+# !! order of packages is important !!
+# packages updated on 7th Nov 2022
+exts_list = [
+    ('agricolae', '1.3-6', {
+        'checksums': ['c56f1b6f6dabd03d722bcccdca94d8c80badfb82e5600464be0164116325db4a'],
+    }),
+    ('kableExtra', '1.3.4', {
+        'checksums': ['091ffac282cf9257edcec1a06da38b5e6516f111296bedb934e32f5692ffbbb0'],
+    }),
+    ('metap', '1.8', {
+        'checksums': ['ee9501a8de8a4c47af1632e6053e42ef53fc4b8bdf0f2759edc4d3eefaf5552b'],
+    }),
+    ('msigdbr', '7.5.1', {
+        'checksums': ['dc30487bdf3594425ae9faec1ca0d7d0cd7278f4f177689133f92880e74acaca'],
+    }),
+    ('Seurat', '4.3.0.1', {
+        'checksums': ['a42b32447e7a98875bda3002936fe8d901f42b3142460d4ed4ef6c56d1e48b12'],
+    }),
+    ('writexl', '1.4.2', {
+        'checksums': ['8f75633eb2b6349a07db347d5b6bf40781a8dab63b6cb858849a616e9b629027'],
+    }),
+    ('clusterProfiler', '4.4.4', {
+        'checksums': ['e5e23a5a1b9580f3801291affb2e547e2fd228e1190e9bce398a1b097c86b24c'],
+    }),
+    ('DEXSeq', '1.42.0', {
+        'checksums': ['550910c28638c78d74ea57ef8af01ef7d76ba91b36668432cf6c5f54774dfdb7'],
+    }),
+    ('openxlsx', '4.2.5.2', {
+        'checksums': ['ee7089e7e5832ef22ee0d0eebf7cca5096ce23afb2bcdb58700be62526fc9b67'],
+    }),
+    ('org.Ag.eg.db', '3.15.0', {
+        'checksums': ['08d147d587925b36c60c850ef0d8b3678ff4ac915566da29354169756ab8d8e2'],
+    }),
+    ('org.At.tair.db', '3.15.1', {
+        'checksums': ['9ff4bd5060c0c7560d622c96b9405640671902b76d24dea8d2cd6512982325d9'],
+    }),
+    ('org.Bt.eg.db', '3.15.0', {
+        'checksums': ['d432e550c1312ce3516a6f51e35d7e04c1b0b373140dd85459f5c979ed82b95a'],
+    }),
+    ('org.Bt.eg.db', '3.15.0', {
+        'checksums': ['d432e550c1312ce3516a6f51e35d7e04c1b0b373140dd85459f5c979ed82b95a'],
+    }),
+    ('org.Ce.eg.db', '3.15.0', {
+        'checksums': ['b249a45ecb733ed697f4405efe875786657d40cc9cabc945b0d67b814e7b8341'],
+    }),
+    ('org.Cf.eg.db', '3.15.0', {
+        'checksums': ['ceef77f976b4b91c9a7044dbdd3f95b89b105f44e72bd9bcbc719298d7d7bbb6'],
+    }),
+    ('org.Dm.eg.db', '3.15.0', {
+        'checksums': ['734100d885e093ec4348d03c88d606abddef60fa9b4c03d5d0dc1edabb7e31b5'],
+    }),
+    ('org.Dr.eg.db', '3.15.0', {
+        'checksums': ['96143b221a67d91c6c925647a1dfe323b0f5e8c32317c692e27a138d30e6af5a'],
+    }),
+    ('org.Mmu.eg.db', '3.15.0', {
+        'checksums': ['f6b8364884212b3b54e2b6461b00201e787c90fb911de1ce7a6a5882a55bc8d3'],
+    }),
+    ('org.Pt.eg.db', '3.15.0', {
+        'checksums': ['26de912b123391693cf2533a0e659df06127aa4b3c808b72cdcea6283b068ab5'],
+    }),
+    ('org.Ss.eg.db', '3.15.0', {
+        'checksums': ['95e7384051f9f960fd5b06c98c32e5e277321c726a6926f20f543cdf28f1673b'],
+    }),
+    ('org.Xl.eg.db', '3.15.0', {
+        'checksums': ['2fcf31dce610708fc8b13d4ed658b720278d1e7e7eb2809a218d56b16c25f94f'],
+    }),
+    ('topGO', '2.48.0', {
+        'checksums': ['660b137899a6b8dd9ccf5bff718dd0e168a8d994dc6b327995398659bd20b988'],
+    }),
+    ('DEGreport', '1.32.0', {
+        'checksums': ['4614dc10ae1ce19a7b54c19313e9dc36eb6bf40257273b25b4c1b6e1fd0fff51'],
+    }),
+]
+
+modextrapaths = {'R_LIBS_SITE': ''}
+
+sanity_check_paths = {
+    'files': [],
+    'dirs': ['AnnotationDbi', 'BiocManager', 'GenomicFeatures'],
+}
+
+moduleclass = 'bio'
