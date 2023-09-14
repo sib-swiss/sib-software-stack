@@ -14,6 +14,7 @@ toolchain = {'name': 'foss', 'version': '2021a'}
 builddependencies = [('pkg-config', '0.29.2')]
 
 dependencies = [
+    ('R', '4.2.1'),
     ('R-bundle-Bioconductor', '3.15', versionsuffix),
 ]
 
