@@ -27,6 +27,7 @@ R-4.1.0-foss-2021a.eb
 R-bundle-Bioconductor-3.13-foss-2021a-R-4.1.0.eb
 R-bundle-extraSIB-20220204-foss-2021a-R-4.1.0.eb
 IBU R-4.2.1-foss-2021a.eb
+IBU R-bundle-IBU-2023072800-foss-2021a-R-4.2.1.eb
 
 # Build additional software.
 RDKit-2021.03.4-foss-2021a.eb
