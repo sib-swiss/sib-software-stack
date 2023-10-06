@@ -112,6 +112,7 @@ VIT ProtoGene-4.2.3-GCCcore-10.3.0-Perl-5.32.1.eb
 VIT MetaNetX_Perl-20210806-GCCcore-10.3.0-Perl-5.32.1.eb
 VIT MetaNetX_Python-20220204-GCCcore-10.3.0.eb
 VIT OracleInstantClient-21.5.0.0.0.eb
+VIT Raptor-2.0.16-GCCcore-10.3.0.eb
 
 # HUG specific.
 HUG InterOp-1.1.23.eb
