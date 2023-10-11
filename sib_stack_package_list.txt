@@ -29,6 +29,7 @@ R-bundle-extraSIB-20220204-foss-2021a-R-4.1.0.eb
 
 # Build additional software.
 RDKit-2021.03.4-foss-2021a.eb
+RDKit-2023.03.3-foss-2021a.eb
 SAMtools-1.13-GCC-10.3.0.eb
 HMMER2-2.3.2-GCC-10.3.0.eb
 HMMER-3.3.2-gompi-2021a.eb
