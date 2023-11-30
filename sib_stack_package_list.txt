@@ -118,7 +118,7 @@ VIT OracleInstantClient-21.5.0.0.0.eb
 VIT Raptor-2.0.16-GCCcore-10.3.0.eb
 
 # HUG specific
-HUG InterOp-1.2.4-GCCcore-10.3.0.eb
+HUG InterOp-1.2.4-foss-2021a.eb
 HUG AGeNT-3.0.6.eb
 HUG SMRT-Link-12.0.0.177059-cli-tools-only.eb
 
