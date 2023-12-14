@@ -1,0 +1,113 @@
+easyblock = 'Bundle'
+
+name = 'R-bundle-IBU'
+version = '2023121400'
+versionsuffix = '-R-%(rver)s'
+
+homepage = 'https://www.bioinformatics.unibe.ch'
+description = """R packages for IBU."""
+
+toolchain = {'name': 'foss', 'version': '2021a'}
+
+# lpsymphony fails to build with pkgconf, so stick to pkg-config
+# error in: https://github.com/easybuilders/easybuild-easyconfigs/pull/15829#issuecomment-1178655286
+builddependencies = [('pkg-config', '0.29.2')]
+
+dependencies = [
+    ('R', '4.3.2'),
+    ('R-bundle-CRAN', '2023.11'),
+    ('R-bundle-Bioconductor', '3.18', versionsuffix),
+]
+
+exts_default_options = {
+    'source_urls': [
+        'https://bioconductor.org/packages/3.18/bioc/src/contrib/',
+        'https://bioconductor.org/packages/3.18/bioc/src/contrib/Archive/%(name)s',
+        'https://bioconductor.org/packages/3.18/data/annotation/src/contrib/',
+        'https://bioconductor.org/packages/3.18/data/experiment/src/contrib/',
+        'https://cran.r-project.org/src/contrib/Archive/%(name)s',  # package archive
+        'https://cran.r-project.org/src/contrib/',  # current version of packages
+        'https://cran.freestatistics.org/src/contrib',  # mirror alternative for current packages
+    ],
+    'source_tmpl': '%(name)s_%(version)s.tar.gz'
+}
+
+exts_defaultclass = 'RPackage'
+
+# check whether correct version is installed in extension filter
+# (some versions in this bundle may be newer than the ones provided by R)
+local_ext_version_check = "pkgver = packageVersion('%(ext_name)s'); if (pkgver != '%(ext_version)s') "
+local_stop_msg = "stop('%(ext_name)s %(ext_version)s not installed, found ', pkgver, ' instead')"
+exts_filter = ("R -q --no-save", "%s { %s }" % (local_ext_version_check, local_stop_msg))
+
+# CRAN packages on which these Bioconductor packages depend are available in R module on which this depends
+# !! order of packages is important !!
+# packages updated on 2023-12-14
+exts_list = [
+    ('kableExtra', '1.3.4', {
+        'checksums': ['091ffac282cf9257edcec1a06da38b5e6516f111296bedb934e32f5692ffbbb0'],
+    }),
+    ('babelgene', '22.9', {
+        'checksums': ['ce6601dcb78352516d3b0355042c52a20e154b39d3b27b93ff52150a59c885e2'],
+    }),
+    ('msigdbr', '7.5.1', {
+        'checksums': ['dc30487bdf3594425ae9faec1ca0d7d0cd7278f4f177689133f92880e74acaca'],
+    }),
+    ('DEXSeq', '1.48.0', {
+        'checksums': ['1c392234ef453a180d523f0d4969fc5dea518422e5c7940a9e16b816d553a9e0'],
+    }),
+    ('org.Ag.eg.db', '3.18.0', {
+        'checksums': ['9ffa0f60cf6788628c152b7840f0cc24687076972082ab1b1f62ecebd1ef2bc9'],
+    }),
+    ('org.At.tair.db', '3.18.0', {
+        'checksums': ['81baae5188e3c0a184e662437e905126bd9a9ddc1c7f6b972caed87bbd83998e'],
+    }),
+    ('org.Bt.eg.db', '3.18.0', {
+        'checksums': ['cc2db0bad0782754897657a77c98e4bb6b739f697c6096bc3a03719d9dbcf939'],
+    }),
+    ('org.Ce.eg.db', '3.18.0', {
+        'checksums': ['b8b06a6ebac8ea36f643d6dfb3f6a486a7d4a20561a1bb74eb424de3d7ca4bbb'],
+    }),
+    ('org.Cf.eg.db', '3.18.0', {
+        'checksums': ['d772ab3f2c8b8baacada5273ee65493c9ca1ce5d13ef3bf5f9eded821e43d231'],
+    }),
+    ('org.Dm.eg.db', '3.18.0', {
+        'checksums': ['46693c745ac637135baa35a229abe7124d099c9b250902829684dac1ade719d8'],
+    }),
+    ('org.Dr.eg.db', '3.18.0', {
+        'checksums': ['ec9ba29db1ec0733a953f52c376a8e33a70c31d7fd56728be30f62f6d79365ce'],
+    }),
+    ('org.Mmu.eg.db', '3.18.0', {
+        'checksums': ['109899eb5b74a6bbb87fa40095c9254301e1463f738956e73e61e3bb7c3340e2'],
+    }),
+    ('org.Pt.eg.db', '3.18.0', {
+        'checksums': ['cefb919bfa61ebbc931b8b42a02543cd8f35fe41a13f3392faae34225da0603b'],
+    }),
+    ('org.Ss.eg.db', '3.18.0', {
+        'checksums': ['1840341447de2711a97ac09f0c12d332a1c7eb7bfe79ff53b41aea0309e4194b'],
+    }),
+    ('org.Xl.eg.db', '3.18.0', {
+        'checksums': ['f945a074e2c924764ed7af42b9c742117256a1647535c43bd8a1b52f2f23b907'],
+    }),
+    ('topGO', '2.54.0', {
+        'checksums': ['dd2617670ff9aeae2a114bb8c1bd70aa816aae4ed4faf23e6a88ff1942f7f6eb'],
+    }),
+    ('logging', '0.10-108', {
+        'checksums': ['85c91aa5a313f5f9fbb0394cda3f924a2495cca3cc5cd68dde0695fe3c20ed8d'],
+    }),
+    ('Nozzle.R1', '1.1-1.1', {
+        'checksums': ['777e0fdada4a4d4c590885897a52beb91a5d5a1b8073c471448b3644d9715639'],
+    }),
+    ('DEGreport', '1.38.5', {
+        'checksums': ['bf88efb88eb0f49ae2d34e65b7b560443fc838108b9a240f1f47b5c014200d68'],
+    }),
+]
+
+modextrapaths = {'R_LIBS_SITE': ''}
+
+sanity_check_paths = {
+    'files': [],
+    'dirs': ['DEXSeq', 'DEGreport', 'topGO', 'org.Xl.eg.db', ],
+}
+
+moduleclass = 'bio'
