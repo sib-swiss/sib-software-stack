@@ -108,6 +108,7 @@ SpaceRanger-2.1.0-GCC-10.3.0.eb
 BWA-MEM2-2.2.1-GCC-10.3.0.eb
 tabix-0.2.6-GCCcore-10.3.0.eb
 DeepLabCut-2.2.0.6-foss-2021a-CUDA-11.3.1.eb
+PyTorch-1.10.0-foss-2021a-CUDA-11.3.1.eb
 
 # Softs with source requiring manual download.
 CellRanger-6.1.2.eb
