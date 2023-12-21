@@ -112,6 +112,7 @@ PyTorch-1.10.0-foss-2021a-CUDA-11.3.1.eb
 TensorFlow-2.6.0-foss-2021a-CUDA-11.3.1.eb
 GEMMA-0.98.5-foss-2021a.eb
 PLINK-1.9b_7.2-x86_64.eb
+fastp-0.23.4-GCC-10.3.0.eb
 
 # Softs with source requiring manual download.
 CellRanger-6.1.2.eb
