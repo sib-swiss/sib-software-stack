@@ -116,6 +116,7 @@ fastp-0.23.4-GCC-10.3.0.eb
 SeqKit-2.6.1.eb
 Bowtie2-2.3.4.1-foss-2021a.eb
 BLAST+-2.10.1-gompi-2021a.eb
+DIAMOND-2.0.9-GCC-10.3.0.eb
 
 # Softs with source requiring manual download.
 CellRanger-6.1.2.eb
