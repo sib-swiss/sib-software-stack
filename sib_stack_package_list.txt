@@ -119,6 +119,7 @@ BLAST+-2.10.1-gompi-2021a.eb
 DIAMOND-2.0.9-GCC-10.3.0.eb
 HOMER-4.11-foss-2021a.eb
 UCSC-Utils-448-foss-2021a.eb
+Qualimap-2.3-foss-2021a-R-4.3.2.eb
 
 # Softs with source requiring manual download.
 CellRanger-6.1.2.eb
