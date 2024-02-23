@@ -50,7 +50,7 @@ InterProScan-5.55-88.0-foss-2021a.eb
 OpenBabel-3.1.1-gompi-2021a.eb
 Rgurobi-9.5.0-foss-2021a-R-4.1.0.eb
 Armadillo-10.7.5-foss-2021a.eb
-AUGUSTUS-3.4.0-foss-2021a.eb
+#AUGUSTUS-3.4.0-foss-2021a.eb
 BWA-0.7.17-GCC-10.3.0.eb
 hifiasm-0.16.1-GCCcore-10.3.0.eb
 FastANI-1.33-GCC-10.3.0.eb
