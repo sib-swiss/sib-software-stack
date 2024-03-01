@@ -83,7 +83,7 @@ SRA-Toolkit-3.0.5-gompi-2021a.eb
 Trimmomatic-0.39-Java-11.eb
 VCFtools-0.1.16-GCC-10.3.0.eb
 Kraken2-2.1.2-gompi-2021a.eb
-#purge_dups-1.2.5-foss-2021a.eb # Issue at compile time
+purge_dups-1.2.5-foss-2021a.eb
 MCL-14.137-GCCcore-10.3.0.eb
 vt-0.57721-GCC-10.3.0.eb
 STAR-2.7.10a_alpha_220601-GCC-10.3.0.eb
