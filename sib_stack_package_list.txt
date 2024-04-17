@@ -28,8 +28,8 @@ R-bundle-Bioconductor-3.13-foss-2021a-R-4.1.0.eb
 R-bundle-extraSIB-20220204-foss-2021a-R-4.1.0.eb
 
 # Build additional software.
-#RDKit-2021.03.4-foss-2021a.eb
-#RDKit-2023.03.3-foss-2021a.eb
+RDKit-2021.03.4-foss-2021a.eb
+RDKit-2023.03.3-foss-2021a.eb
 SAMtools-1.13-GCC-10.3.0.eb
 HMMER2-2.3.2-GCC-10.3.0.eb
 HMMER-3.3.2-gompi-2021a.eb
@@ -47,15 +47,15 @@ CD-HIT-4.8.1-GCC-10.3.0.eb
 MAFFT-7.487-gompi-2021a-with-extensions.eb
 pftoolsV3-3.2.11-foss-2021a.eb
 InterProScan-5.55-88.0-foss-2021a.eb
-#OpenBabel-3.1.1-gompi-2021a.eb
+OpenBabel-3.1.1-gompi-2021a.eb
 Rgurobi-9.5.0-foss-2021a-R-4.1.0.eb
 Armadillo-10.7.5-foss-2021a.eb
-#AUGUSTUS-3.4.0-foss-2021a.eb # Issue with SuiteSparse
+AUGUSTUS-3.4.0-foss-2021a.eb
 BWA-0.7.17-GCC-10.3.0.eb
 hifiasm-0.16.1-GCCcore-10.3.0.eb
 FastANI-1.33-GCC-10.3.0.eb
 MaSuRCA-4.0.9-foss-2021a-Perl-5.32.1.eb
-#BUSCO-5.4.2-foss-2021a.eb # Issues with SuiteSparse
+BUSCO-5.4.2-foss-2021a.eb
 Infernal-1.1.4-foss-2021a.eb
 InParanoid-5.0-20220607-GCC-10.3.0.eb
 snakemake-6.6.1-foss-2021a.eb
@@ -113,7 +113,7 @@ VIT BTLib-0.20-GCCcore-10.3.0-Perl-5.32.1.eb
 VIT ESTScan-2.1-GCCcore-10.3.0-Perl-5.32.1.eb
 VIT ProtoGene-4.2.3-GCCcore-10.3.0-Perl-5.32.1.eb
 VIT MetaNetX_Perl-20210806-GCCcore-10.3.0-Perl-5.32.1.eb
-#VIT MetaNetX_Python-20220204-GCCcore-10.3.0.eb
+VIT MetaNetX_Python-20220204-GCCcore-10.3.0.eb
 VIT OracleInstantClient-21.5.0.0.0.eb
 VIT Raptor-2.0.16-GCCcore-10.3.0.eb
 
