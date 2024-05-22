@@ -123,6 +123,7 @@ Qualimap-2.3-foss-2021a-R-4.3.2.eb
 IQ-TREE-2.2.2.6-gompi-2021a.eb
 BLAST+-2.15.0-gompi-2021a.eb
 Clustal-Omega-1.2.4-GCC-10.3.0.eb
+Roary-3.13.0-foss-2021a.eb
 
 # Softs with source requiring manual download.
 CellRanger-6.1.2.eb
