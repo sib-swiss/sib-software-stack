@@ -10,117 +10,59 @@
 # Build GCC
 # The "GCC" easyconfig is a wrapper module for GCC and binutils.
 # Therefore it's simpler to build directly GCC rather than GCCcore.
-GCC-10.3.0.eb
-FFTW-3.3.9-gompi-2021a.eb
+GCC-14.2.0.eb
+FFTW-3.3.10-GCC-14.2.0.eb
 
-# Build Python and R.
-Python-3.9.5-GCCcore-10.3.0.eb
-SciPy-bundle-2021.05-foss-2021a.eb
+# Build Python
+Python-3.13.1-GCCcore-14.2.0.eb
+SciPy-bundle-2025.06-gfbf-2025a.eb
 
-# Build R.
+# Build R
 # Note: R's X11 and Xvfb dependencies are built first to avoid using too much space in /tmp.
 # For some reason, when building dependencies in a single command, EB keep the numerous X11
 # and Xvfb logs around and keeps adding the content logged during the R build to all of them.
-X11-20210518-GCCcore-10.3.0.eb
-Xvfb-1.20.11-GCCcore-10.3.0.eb
-R-4.1.0-foss-2021a.eb
-R-bundle-Bioconductor-3.13-foss-2021a-R-4.1.0.eb
-R-bundle-extraSIB-20220204-foss-2021a-R-4.1.0.eb
+X11-20250521-GCCcore-14.2.0.eb
+#Xvfb-21.1.18-GCCcore-14.2.0.eb
+#R-4.5.1-gfbf-2025a.eb
+#R-bundle-Bioconductor...
+#R-bundle-extraSIB...
 
-# Build additional software.
-RDKit-2021.03.4-foss-2021a.eb
-RDKit-2023.03.3-foss-2021a.eb
-SAMtools-1.13-GCC-10.3.0.eb
-HMMER2-2.3.2-GCC-10.3.0.eb
-HMMER-3.3.2-gompi-2021a.eb
-FastQC-0.11.9-Java-11.eb
-BLAST-2.2.26-Linux_x86_64.eb
-BLAST+-2.11.0-gompi-2021a.eb
-InChI-1.06-GCC-10.3.0.eb
-libSBML-5.19.0-GCC-10.3.0.eb
-BioPerl-1.7.8-GCCcore-10.3.0.eb
-RInChI-1.00-x86_64.eb
-ClustalW2-2.1-foss-2021a.eb
-EMBOSS-6.6.0-foss-2021a.eb
-Gurobi-9.5.0-GCCcore-10.3.0.eb
-CD-HIT-4.8.1-GCC-10.3.0.eb
-MAFFT-7.487-gompi-2021a-with-extensions.eb
-pftoolsV3-3.2.11-foss-2021a.eb
-InterProScan-5.55-88.0-foss-2021a.eb
-OpenBabel-3.1.1-gompi-2021a.eb
-Rgurobi-9.5.0-foss-2021a-R-4.1.0.eb
-Armadillo-10.7.5-foss-2021a.eb
-AUGUSTUS-3.4.0-foss-2021a.eb
-BWA-0.7.17-GCC-10.3.0.eb
-hifiasm-0.16.1-GCCcore-10.3.0.eb
-FastANI-1.33-GCC-10.3.0.eb
-MaSuRCA-4.0.9-foss-2021a-Perl-5.32.1.eb
-BUSCO-5.4.2-foss-2021a.eb
-Infernal-1.1.4-foss-2021a.eb
-InParanoid-5.0-20220607-GCC-10.3.0.eb
-snakemake-6.6.1-foss-2021a.eb
-Nextflow-22.04.0.eb
-Anaconda3-2022.05.eb
-bamtofastq-1.4.0-GCCcore-10.3.0.eb
-BamTools-2.5.2-GCC-10.3.0.eb
-BEDTools-2.30.0-GCC-10.3.0.eb
-DIAMOND-2.0.13-GCC-10.3.0.eb
-DIAMOND-2.1.8-GCC-10.3.0.eb
-Flye-2.9-GCC-10.3.0.eb
-hifiasm-0.15.2-GCCcore-10.3.0.eb
-HTSlib-1.12-GCC-10.3.0.eb
-Java-17.0.1.eb
-Jellyfish-2.3.0-GCC-10.3.0.eb
-minimap2-2.20-GCCcore-10.3.0.eb
-MUSCLE-5.1.0-GCCcore-10.3.0.eb
-picard-2.25.5-Java-13.eb
-prokka-1.14.5-gompi-2021a.eb
-Racon-1.4.21-GCCcore-10.3.0.eb
-Sambamba-0.8.2-GCC-10.3.0.eb
-samblaster-0.1.26-GCC-10.3.0.eb
-SPAdes-3.15.3-GCC-10.3.0.eb
-SRA-Toolkit-3.0.5-gompi-2021a.eb
-Trimmomatic-0.39-Java-11.eb
-VCFtools-0.1.16-GCC-10.3.0.eb
-Kraken2-2.1.2-gompi-2021a.eb
-purge_dups-1.2.5-foss-2021a.eb
-MCL-14.137-GCCcore-10.3.0.eb
-vt-0.57721-GCC-10.3.0.eb
-STAR-2.7.10a_alpha_220601-GCC-10.3.0.eb
-MultiQC-1.11-foss-2021a.eb
-Salmon-1.4.0-GCC-10.3.0.eb
-kallisto-0.48.0-gompi-2021a.eb
-MACS2-2.2.7.1-foss-2021a.eb
-anadama2-0.10.0-foss-2021a.eb
-RepeatMasker-4.1.5-foss-2021a.eb
-EDirect-19.7.20230531-GCCcore-10.3.0.eb
-Bowtie2-2.5.1-GCC-10.3.0.eb
-Bowtie-1.3.1-GCC-10.3.0.eb
-BCFtools-1.12-GCC-10.3.0.eb
-Graphviz-2.47.2-GCCcore-10.3.0.eb
+# Build additional software
+#RDKit-2023.03.3-foss-2021a.eb
+#BLAST-2.2.26-Linux_x86_64.eb
+#BLAST+-2.11.0-gompi-2021a.eb
+#InChI-1.06-GCC-10.3.0.eb
+#libSBML-5.19.0-GCC-10.3.0.eb
+#BioPerl-1.7.8-GCCcore-10.3.0.eb
+#RInChI-1.00-x86_64.eb
+#Gurobi-9.5.0-GCCcore-10.3.0.eb
+#CD-HIT-4.8.1-GCC-10.3.0.eb
+#MAFFT-7.487-gompi-2021a-with-extensions.eb
+#pftoolsV3-3.2.11-foss-2021a.eb
+#Rgurobi-9.5.0-foss-2021a-R-4.1.0.eb
+#snakemake-6.6.1-foss-2021a.eb
+#Nextflow-22.04.0.eb
+#Anaconda3-2022.05.eb
+#DIAMOND-2.0.13-GCC-10.3.0.eb
+#DIAMOND-2.1.8-GCC-10.3.0.eb
+#Java-17.0.1.eb
+#Graphviz-2.47.2-GCCcore-10.3.0.eb
 
 # Softs with source requiring manual download
-CellRanger-6.1.2.eb
-CellRanger-7.1.0.eb
+#CellRanger-7.1.0.eb
 
 # SIB Lausanne specific
-VIT Chemaxon-Marvin-21.14.eb                                  # source only at Vital-IT
-VIT RDT-2.5.0-Java-11.eb
-VIT Virtuoso-opensource-7.2.6.1-GCC-10.3.0.eb
-VIT GraphDB-10.1.5.eb
-VIT jacop-1.18-foss-2021a-R-4.1.0.eb
-VIT patsearch-1-GCCcore-10.3.0-Perl-5.32.1.eb
-VIT paralign-5.0.0-Linux_x86_64.eb                            # source only at Vital-IT
-VIT BTLib-0.20-GCCcore-10.3.0-Perl-5.32.1.eb
-VIT ESTScan-2.1-GCCcore-10.3.0-Perl-5.32.1.eb
-VIT ProtoGene-4.2.3-GCCcore-10.3.0-Perl-5.32.1.eb
-VIT MetaNetX_Perl-20210806-GCCcore-10.3.0-Perl-5.32.1.eb
-VIT MetaNetX_Python-20220204-GCCcore-10.3.0.eb
-VIT OracleInstantClient-21.5.0.0.0.eb
-VIT Raptor-2.0.16-GCCcore-10.3.0.eb
+#VIT Chemaxon-Marvin-21.14.eb                                  # source only at Vital-IT
+#VIT RDT-2.5.0-Java-11.eb
+#VIT Virtuoso-opensource-7.2.6.1-GCC-10.3.0.eb
+#VIT GraphDB-10.1.5.eb
+#VIT MetaNetX_Perl-20210806-GCCcore-10.3.0-Perl-5.32.1.eb
+#VIT MetaNetX_Python-20220204-GCCcore-10.3.0.eb
+#VIT Raptor-2.0.16-GCCcore-10.3.0.eb
+#VIT Jena-4.10.0.eb
 
 # HUG specific
-HUG InterOp-1.2.4-foss-2021a.eb
-HUG AGeNT-3.0.6.eb
-HUG SMRT-Link-12.0.0.177059-cli-tools-only.eb
+#HUG InterOp-1.2.4-foss-2021a.eb
+#HUG AGeNT-3.0.6.eb
+#HUG SMRT-Link-12.0.0.177059-cli-tools-only.eb
 
