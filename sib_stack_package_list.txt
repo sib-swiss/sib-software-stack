@@ -35,6 +35,7 @@ InChI-1.07.4-GCC-14.2.0.eb
 libSBML-5.20.5-GCC-14.2.0.eb
 BioPerl-1.7.8-GCCcore-14.2.0.eb
 # RInChI-1.00-x86_64.eb
+# RInChI-1.00-GCC-14.2.0.eb
 # Gurobi-11.0.2-GCCcore-10.3.0.eb
 #CD-HIT-4.8.1-GCC-10.3.0.eb
 #MAFFT-7.487-gompi-2021a-with-extensions.eb
@@ -45,7 +46,7 @@ BioPerl-1.7.8-GCCcore-14.2.0.eb
 #Anaconda3-2022.05.eb
 #DIAMOND-2.0.13-GCC-10.3.0.eb
 #DIAMOND-2.1.8-GCC-10.3.0.eb
-# Java-17.0.1.eb
+Java-21.0.8.eb
 # Graphviz-2.47.2-GCCcore-10.3.0.eb
 # dvc with rich
 # uv
