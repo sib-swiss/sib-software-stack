@@ -22,8 +22,7 @@ SciPy-bundle-2025.06-gfbf-2025a.eb
 # For some reason, when building dependencies in a single command, EB keep the numerous X11
 # and Xvfb logs around and keeps adding the content logged during the R build to all of them.
 X11-20250521-GCCcore-14.2.0.eb
-#Xvfb-21.1.18-GCCcore-14.2.0.eb
-#R-4.5.1-gfbf-2025a.eb
+R-4.5.1-gfbf-2025a.eb
 #R-bundle-Bioconductor...
 #R-bundle-extraSIB...
 
