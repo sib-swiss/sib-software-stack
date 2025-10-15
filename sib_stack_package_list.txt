@@ -39,8 +39,8 @@ Gurobi-12.0.3-GCCcore-14.2.0.eb
 #MAFFT-7.487-gompi-2021a-with-extensions.eb
 # pftoolsV3-3.2.11-foss-2021a.eb
 # Rgurobi-11.0.2-foss-2021a-R-4.1.0.eb
-#snakemake-6.6.1-foss-2021a.eb
-#Nextflow-22.04.0.eb
+# snakemake-6.6.1-foss-2021a.eb
+# Nextflow-22.04.0.eb
 #Anaconda3-2022.05.eb
 #DIAMOND-2.0.13-GCC-10.3.0.eb
 #DIAMOND-2.1.8-GCC-10.3.0.eb
@@ -50,6 +50,8 @@ Graphviz-13.1.2-GCCcore-14.2.0-minimal.eb
 # uv
 # new chipseq
 # parallel
+# julia
+# rust
 
 # Softs with source requiring manual download
 #CellRanger-7.1.0.eb
