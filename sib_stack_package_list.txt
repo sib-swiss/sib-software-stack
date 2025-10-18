@@ -28,8 +28,7 @@ R-4.5.1-gfbf-2025a.eb
 
 # Build additional software
 RDKit-2025.03.5-foss-2025a.eb
-#BLAST-2.2.26-Linux_x86_64.eb
-# BLAST+-2.11.0-gompi-2021a.eb
+BLAST+-2.17.0-gompi-2025a.eb
 InChI-1.07.4-GCC-14.2.0.eb
 libSBML-5.20.5-GCC-14.2.0.eb
 BioPerl-1.7.8-GCCcore-14.2.0.eb
@@ -46,19 +45,17 @@ Gurobi-12.0.3-GCCcore-14.2.0.eb
 #DIAMOND-2.1.8-GCC-10.3.0.eb
 Java-21.0.8.eb
 Graphviz-13.1.2-GCCcore-14.2.0-minimal.eb
+Rust-1.85.1-GCCcore-14.2.0.eb
 # dvc with rich
 # uv
 # new chipseq
+# Termal
 # parallel
 # julia
-# rust
 
-# Softs with source requiring manual download
-#CellRanger-7.1.0.eb
 
 # SIB Lausanne specific
 # VIT Chemaxon-Marvin-21.14.eb                                  # source only at Vital-IT
-#VIT RDT-2.5.0-Java-11.eb
 # VIT Virtuoso-opensource-7.2.6.1-GCC-10.3.0.eb
 # VIT GraphDB-10.1.5.eb
 # VIT MetaNetX_Perl-20210806-GCCcore-10.3.0-Perl-5.32.1.eb
