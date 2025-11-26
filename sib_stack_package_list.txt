@@ -23,7 +23,7 @@ SciPy-bundle-2025.06-gfbf-2025a.eb
 # and Xvfb logs around and keeps adding the content logged during the R build to all of them.
 X11-20250521-GCCcore-14.2.0.eb
 R-4.5.1-gfbf-2025a.eb
-# R-bundle-Bioconductor...
+R-bundle-Bioconductor-3.22-foss-2025a-R-4.5.1.eb
 # R-bundle-extraSIB...
 
 # Build additional software
@@ -34,15 +34,13 @@ libSBML-5.20.5-GCC-14.2.0.eb
 BioPerl-1.7.8-GCCcore-14.2.0.eb
 RInChI-1.00-x86_64.eb
 Gurobi-12.0.3-GCCcore-14.2.0.eb
-# CD-HIT-4.8.1-GCC-10.3.0.eb
-#MAFFT-7.487-gompi-2021a-with-extensions.eb
-# pftoolsV3-3.2.11-foss-2021a.eb
+# BgeeCall
+# BgeeDB
+CD-HIT-4.8.1-GCC-14.2.0.eb
+pftoolsV3-3.2.13-GCCcore-14.2.0.eb
 # Rgurobi-11.0.2-foss-2021a-R-4.1.0.eb
 # snakemake-6.6.1-foss-2021a.eb
 # Nextflow-22.04.0.eb
-#Anaconda3-2022.05.eb
-#DIAMOND-2.0.13-GCC-10.3.0.eb
-#DIAMOND-2.1.8-GCC-10.3.0.eb
 Java-21.0.8.eb
 Graphviz-13.1.2-GCCcore-14.2.0-minimal.eb
 Rust-1.85.1-GCCcore-14.2.0.eb
