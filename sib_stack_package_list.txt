@@ -24,7 +24,6 @@ SciPy-bundle-2025.06-gfbf-2025a.eb
 X11-20250521-GCCcore-14.2.0.eb
 R-4.5.1-gfbf-2025a.eb
 R-bundle-Bioconductor-3.22-foss-2025a-R-4.5.1.eb
-# R-bundle-extraSIB...
 
 # Build additional software
 RDKit-2025.03.5-foss-2025a.eb
@@ -38,7 +37,7 @@ Gurobi-12.0.3-GCCcore-14.2.0.eb
 # BgeeDB
 CD-HIT-4.8.1-GCC-14.2.0.eb
 pftoolsV3-3.2.13-GCCcore-14.2.0.eb
-# Rgurobi-11.0.2-foss-2021a-R-4.1.0.eb
+Rgurobi-12.0.3-foss-2025a-R-4.5.1.eb
 # snakemake-6.6.1-foss-2021a.eb
 # Nextflow-22.04.0.eb
 Java-21.0.8.eb
@@ -53,6 +52,7 @@ Rust-1.85.1-GCCcore-14.2.0.eb
 
 
 # SIB Lausanne specific
+# VIT R-bundle-extraSIB...
 # VIT Chemaxon-Marvin-21.14.eb                                  # source only at Vital-IT
 # VIT Virtuoso-opensource-7.2.6.1-GCC-10.3.0.eb
 # VIT GraphDB-10.1.5.eb
