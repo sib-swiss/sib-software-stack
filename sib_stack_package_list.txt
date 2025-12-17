@@ -44,6 +44,7 @@ Graphviz-13.1.2-GCCcore-14.2.0-minimal.eb
 Rust-1.85.1-GCCcore-14.2.0.eb
 Julia-1.12.2.eb
 parallel-20250722-GCCcore-14.2.0.eb
+Pandoc-3.8.2.1.eb
 # dvc with rich
 # uv
 # new chipseq
@@ -52,9 +53,8 @@ parallel-20250722-GCCcore-14.2.0.eb
 
 # SIB Lausanne specific
 # VIT R-bundle-extraSIB...
-# VIT Chemaxon-Marvin-21.14.eb                                  # source only at Vital-IT
 # VIT Virtuoso-opensource-7.2.6.1-GCC-10.3.0.eb
-# VIT GraphDB-10.1.5.eb
+VIT GraphDB-11.2.0.eb
 # VIT MetaNetX_Perl-20210806-GCCcore-10.3.0-Perl-5.32.1.eb
 # VIT MetaNetX_Python-20220204-GCCcore-10.3.0.eb
 # VIT Raptor-2.0.16-GCCcore-10.3.0.eb
