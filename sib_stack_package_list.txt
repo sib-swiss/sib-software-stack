@@ -45,8 +45,8 @@ Rust-1.85.1-GCCcore-14.2.0.eb
 Julia-1.12.2.eb
 parallel-20250722-GCCcore-14.2.0.eb
 Pandoc-3.8.2.1.eb
+uv-0.7.13-GCCcore-14.2.0.eb
 # dvc with rich
-# uv
 # new chipseq
 # Termal
 
