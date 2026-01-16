@@ -51,16 +51,18 @@ uv-0.7.13-GCCcore-14.2.0.eb
 # Termal
 
 
-# SIB Lausanne specific
+## SIB Lausanne specific
 # VIT R-bundle-extraSIB...
-# VIT Virtuoso-opensource-7.2.6.1-GCC-10.3.0.eb
-VIT GraphDB-11.2.0.eb
 # VIT MetaNetX_Perl-20210806-GCCcore-10.3.0-Perl-5.32.1.eb
 # VIT MetaNetX_Python-20220204-GCCcore-10.3.0.eb
-VIT Exonerate-2.4.0-GCC-14.2.0.eb
+## RDF/SPARQL oriented
+# VIT Virtuoso-opensource-7.2.6.1-GCC-10.3.0.eb
+VIT GraphDB-11.2.0.eb
 VIT Raptor-2.0.16-GCCcore-14.2.0.eb
-# VIT Jena-4.10.0.eb
+VIT Jena-5.6.0.eb
 # VIT with Fuseki???
+## Others
+VIT Exonerate-2.4.0-GCC-14.2.0.eb
 # VIT openbabel...
 # VIT EMBOSS...
 # VIT hmmer...
