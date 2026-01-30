@@ -26,26 +26,31 @@ R-4.5.1-gfbf-2025a.eb
 R-bundle-Bioconductor-3.22-foss-2025a-R-4.5.1.eb
 
 # Build additional software
-RDKit-2025.03.5-foss-2025a.eb
-BLAST+-2.17.0-gompi-2025a.eb
-InChI-1.07.4-GCC-14.2.0.eb
-libSBML-5.20.5-GCC-14.2.0.eb
-BioPerl-1.7.8-GCCcore-14.2.0.eb
-RInChI-1.00-x86_64.eb
-Gurobi-12.0.3-GCCcore-14.2.0.eb
-CD-HIT-4.8.1-GCC-14.2.0.eb
-pftoolsV3-3.2.13-GCCcore-14.2.0.eb
-Rgurobi-12.0.3-foss-2025a-R-4.5.1.eb
-snakemake-9.14.0-foss-2025a.eb
-Nextflow-25.10.0.eb
-kallisto-0.51.1-gompi-2025a.eb
+## Compiler/Lang/Workflow/Solver-Optimizer
 Java-21.0.8.eb
-Graphviz-13.1.2-GCCcore-14.2.0-minimal.eb
 Rust-1.85.1-GCCcore-14.2.0.eb
 Julia-1.12.2.eb
+Go-1.25.5.eb
+snakemake-9.14.0-foss-2025a.eb
+Nextflow-25.10.0.eb
 parallel-20250722-GCCcore-14.2.0.eb
-Pandoc-3.8.2.1.eb
 uv-0.7.13-GCCcore-14.2.0.eb
+Gurobi-12.0.3-GCCcore-14.2.0.eb
+Rgurobi-12.0.3-foss-2025a-R-4.5.1.eb
+## Chem
+RDKit-2025.03.5-foss-2025a.eb
+InChI-1.07.4-GCC-14.2.0.eb
+libSBML-5.20.5-GCC-14.2.0.eb
+RInChI-1.00-x86_64.eb
+## Bio
+BLAST+-2.17.0-gompi-2025a.eb
+BioPerl-1.7.8-GCCcore-14.2.0.eb
+CD-HIT-4.8.1-GCC-14.2.0.eb
+pftoolsV3-3.2.13-GCCcore-14.2.0.eb
+kallisto-0.51.1-gompi-2025a.eb
+## Other
+Graphviz-13.1.2-GCCcore-14.2.0-minimal.eb
+Pandoc-3.8.2.1.eb
 # dvc with rich
 # new chipseq
 # Termal
@@ -66,7 +71,7 @@ VIT Exonerate-2.4.0-GCC-14.2.0.eb
 VIT OpenBabel-3.1.1-gompi-2025a.eb
 VIT EMBOSS-6.6.0-foss-2025a.eb
 VIT HMMER-3.4-gompi-2025a.eb
-# VIT interproscan...
+VIT InterProScan-5.77-108.0-GCC-14.2.0.eb
 # VIT LocTree3...
 # VIT psortb...
 # VIT MATLAB???
