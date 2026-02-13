@@ -1,0 +1,75 @@
+##
+# This is a contribution from SIB Swiss Institute of Bioinformatics
+# Homepage:     https://www.sib.swiss/vital-it
+#
+# Authors::     Sebastien Moretti <sebastien.moretti@sib.swiss>
+##
+easyblock = 'ConfigureMake'
+
+name = 'LocTree3'
+version = '1.0.3'
+
+homepage = 'https://github.com/Rostlab/LocTree3'
+description = """Protein Subcelullar Localization Sequenced-Based Predictor."""
+
+toolchain = {'name': 'GCCcore', 'version': '14.2.0'}
+
+github_account = '%(name)s'
+source_urls = ['https://github.com/Rostlab/LocTree3/archive/refs/heads']
+sources = ['develop.tar.gz']
+checksums = ['db927b924c85fbbec752499c1355139eb8f2be34078bf06008508fd3ffc55d9d']
+
+builddependencies = [
+    ('Automake', '1.17'),
+    ('Autoconf', '2.72'),
+    ('binutils', '2.42'),
+    ('make',     '4.4.1'),
+]
+
+dependencies = [
+    # ('BLAST', '2.2.26'),  # needs blastpgp but very old
+    # pp-popularity-contest recommended
+    ('Perl', '5.40.0'),
+]
+
+preconfigopts = 'aclocal && autoconf && autoheader; automake --add-missing && '
+
+installopts = "PREFIX=%(installdir)s"
+
+exts_defaultclass = 'PerlModule'
+exts_filter = ("perl -e 'require %(ext_name)s'", '')
+exts_default_options = {
+    'preconfigopts': '',
+    'buildopts': '',
+    'preinstallopts': '',
+    'installopts': '',
+    'runtest': 'test',
+}
+
+exts_list = [
+    ('IO::Scalar', '2.113', {
+        'source_tmpl': 'IO-Stringy-%(version)s.tar.gz',
+        'source_urls': ['https://cpan.metacpan.org/authors/id/C/CA/CAPOEIRAB/'],
+        'checksums': ['51220fcaf9f66a639b69d251d7b0757bf4202f4f9debd45bdd341a6aca62fe4e'],
+    }),
+    ('Config::IniFiles', '3.000003', {
+        'source_tmpl': 'Config-IniFiles-%(version)s.tar.gz',
+        'source_urls': ['https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/'],
+        'checksums': ['3c457b65d98e5ff40bdb9cf814b0d5983eb0c53fb8696bda3ba035ad2acd6802'],
+    }),
+]
+
+runtest = 'check'
+
+fix_perl_shebang_for = ['bin/loctree3', 'share/loctree3/loctree2data']
+
+sanity_check_paths = {
+    'files': ["bin/loctree3"],
+    'dirs': ["share/loctree3"]
+}
+
+sanity_check_commands = ["man loctree3"]
+
+modextrapaths = {'PERL5LIB': ['lib/perl5', 'lib/perl5/site_perl/%(perlver)s']}
+
+moduleclass = 'bio'
