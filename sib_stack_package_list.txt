@@ -39,7 +39,7 @@ Gurobi-12.0.3-GCCcore-14.2.0.eb
 Rgurobi-12.0.3-foss-2025a-R-4.5.1.eb
 ## Chem
 RDKit-2025.03.5-foss-2025a.eb
-InChI-1.07.4-GCC-14.2.0.eb
+InChI-1.07.5-GCC-14.2.0.eb
 libSBML-5.20.5-GCC-14.2.0.eb
 RInChI-1.00-x86_64.eb
 ## Bio
@@ -73,9 +73,9 @@ VIT EMBOSS-6.6.0-foss-2025a.eb
 VIT HMMER-3.4-gompi-2025a.eb
 VIT InterProScan-5.77-108.0-GCC-14.2.0.eb
 VIT LocTree3-1.0.3-GCCcore-14.2.0.eb
-# VIT psortb...
+##VIT psortb # Compilation issues, not maintain anymore, provided as a container now!
 # VIT MATLAB???
-# VIT COBRA/cobrapy...
+#  VIT COBRA/cobrapy...
 # VIT apache arrow...
 VIT BgeeDB-2.36.0-foss-2025a-R-4.5.1.eb
 VIT BgeeCall-1.26.0-foss-2025a-R-4.5.1.eb
