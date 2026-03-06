@@ -75,8 +75,8 @@ VIT InterProScan-5.77-108.0-GCC-14.2.0.eb
 VIT LocTree3-1.0.3-GCCcore-14.2.0.eb
 ##VIT psortb # Compilation issues, not maintain anymore, provided as a container now!
 # VIT MATLAB???
-#  VIT COBRA/cobrapy...
-# VIT apache arrow...
+VIT COBRApy-0.30.0-foss-2025a.eb
+VIT Arrow-22.0.0-gfbf-2025a.eb
 VIT BgeeDB-2.36.0-foss-2025a-R-4.5.1.eb
 VIT BgeeCall-1.26.0-foss-2025a-R-4.5.1.eb
 
