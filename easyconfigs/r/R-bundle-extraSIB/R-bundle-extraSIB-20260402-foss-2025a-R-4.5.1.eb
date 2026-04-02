@@ -1,0 +1,107 @@
+easyblock = 'Bundle'
+
+name = 'R-bundle-extraSIB'
+version = '20260402'
+versionsuffix = '-R-%(rver)s'
+
+homepage = 'https://www.vital-it.ch/'
+description = """R extra requirements for SIB"""
+
+toolchain = {'name': 'foss', 'version': '2025a'}
+
+builddependencies = [
+    ('pkgconf', '2.3.0'),
+    ('R',       '4.5.1'),
+]
+
+dependencies = [
+    ('R-bundle-Bioconductor', '3.22', versionsuffix),
+    ('GLPK',                  '5.0'),                   # for glpkAPI
+    # ('libSBML',               '5.20.5'),                # for sybilSBML
+    ('Rgurobi',               '12.0.3', versionsuffix),
+]
+
+exts_default_options = {
+    'source_urls': [
+        'https://bioconductor.org/packages/3.22/bioc/src/contrib/',
+        'https://bioconductor.org/packages/3.22/bioc/src/contrib/Archive/%(name)s',
+        'https://bioconductor.org/packages/3.22/data/annotation/src/contrib/',
+        'https://bioconductor.org/packages/3.22/data/experiment/src/contrib/',
+        'https://cran.r-project.org/src/contrib/Archive/%(name)s',  # package archive
+        'https://cran.r-project.org/src/contrib/',  # current version of packages
+        'https://cran.freestatistics.org/src/contrib',  # mirror alternative for current packages
+        # 'https://www.cs.hhu.de/fileadmin/redaktion/Oeffentliche_Medien/Fakultaeten/'
+        # 'Mathematisch-Naturwissenschaftliche_Fakultaet/Informatik/Bioinformatik',  # sybil
+    ],
+    'sources': ['%(name)s_%(version)s.tar.gz'],
+}
+
+exts_defaultclass = 'RPackage'
+
+# TODO (sparqlr)
+
+# check whether correct version is installed in extension filter
+# (some versions in this bundle may be newer than the ones provided by R)
+local_ext_version_check = "pkgver = packageVersion('%(ext_name)s'); if (pkgver != '%(ext_version)s') "
+local_stop_msg = "stop('%(ext_name)s %(ext_version)s not installed, found ', pkgver, ' instead')"
+exts_filter = ("R -q --no-save", "%s { %s }" % (local_ext_version_check, local_stop_msg))
+
+# CRAN packages on which these Bioconductor packages depend are available in R module on which this depends
+# !! order of packages is important !!
+# packages updated on 5 November 2025
+exts_list = [
+    ('rvg', '0.3.5', {
+        'checksums': ['80917103dbdba98d46c052106d8ee0e97c093feb07fea25bda2a34d3e5c601f0'],
+    }),
+    ('officedown', '0.4.1', {
+        'checksums': ['657506465b047d782c88e60d0104dbcf5b53e53375ae408350292f2a358e9989'],
+    }),
+    ('poorman', '0.2.7', {
+        'checksums': ['089418293cdfde3b46bf53e891a3a8ad924d953a1a7e5ae981de54ebde62b4aa'],
+    }),
+    ('philentropy', '0.10.0', {
+        'checksums': ['2edc53f7f077d3379f73e7d1e8cd1472135da95ddfc47c8273ae96b1da538a49'],
+    }),
+    ('biomartr', '1.0.7', {
+        'checksums': ['9d1d5c51b61ee67ce7ca18afdb0a136ef5709d92d077d80163f9d52ee6c28645'],
+    }),
+    ('colorfulVennPlot', '2.4', {
+        'checksums': ['3c94e94d02a25deb55deb36526a63aa46cf5c70e02ce04d1b9ca2e070c606305'],
+    }),
+    ('gage', '2.60.0', {
+        'checksums': ['6a316d335f6f485b8c7b45fb475858fd797cd13c3b56af257aa65637aa1dea63'],
+    }),
+    ('glpkAPI', '1.3.4.1', {
+        'checksums': ['0044885d3f5ac3dba70444c27c0132f02a76bfe8a87c070b940c6c07ff1e5b04'],
+    }),
+    ('kSamples', '1.2-12', {
+        'checksums': ['629d2dca3d4bdeb6ab4e9fcd1793f89e04f050bcd8bbc06bb179a392d0409eb7'],
+    }),
+    ('org.Sc.sgd.db', '3.22.0', {
+        'checksums': ['ee9f55012893407eacf20b217ee2a16f9b48a947fca332bc1744806dc036ab97'],
+    }),
+    ('topGO', '2.62.0', {
+        'checksums': ['6bca31c56f2e71b763f7540a1b5b0ab197d36fd876b5f3f8d37e3b9bc928e9e1'],
+    }),
+    # ('sybil', '2.2.0', {
+    #     'checksums': ['a555982c862b6ec6378796f5a020f829de94fa685bd4563dd553994faac08c15'],
+    # }),
+    # ('sybilSBML', '3.1.3', {
+    #     'checksums': ['92d891284b6405bc584ddb8c2ed3317dd00afeccf1acdde6d3355c6dd33815ee'],
+    # }),
+    # ('sybilGUROBI', '1.0.6', {
+    #     'checksums': ['026da46bc6200b8b8762bd0ad90f8e9dcfdf5fe74d856264ba2d29097f6e10f5'],
+    # }),
+]
+# clpAPI, still useful?
+# lettercase has been removed from CRAN.
+# muti is not in CRAN or BioConductor.
+
+modextrapaths = {'R_LIBS_SITE': ''}
+
+sanity_check_paths = {
+    'files': [],
+    'dirs': ['officedown'],
+}
+
+moduleclass = 'bio'
