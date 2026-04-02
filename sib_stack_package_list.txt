@@ -57,7 +57,8 @@ Pandoc-3.8.2.1.eb
 
 
 ## SIB Lausanne specific
-# VIT R-bundle-extraSIB...
+VIT R-bundle-extraSIB-20260402-foss-2025a-R-4.5.1.eb
+# is sybil still used?
 # VIT MetaNetX_Perl-20210806-GCCcore-10.3.0-Perl-5.32.1.eb
 # VIT MetaNetX_Python-20220204-GCCcore-10.3.0.eb
 ## RDF/SPARQL oriented
@@ -73,8 +74,8 @@ VIT EMBOSS-6.6.0-foss-2025a.eb
 VIT HMMER-3.4-gompi-2025a.eb
 VIT InterProScan-5.77-108.0-GCC-14.2.0.eb
 VIT LocTree3-1.0.3-GCCcore-14.2.0.eb
-##VIT psortb # Compilation issues, not maintain anymore, provided as a container now!
-# VIT MATLAB???
+#VIT psortb # Compilation issues, not maintain anymore, provided as a container now!
+#VIT MATLAB???
 VIT COBRApy-0.30.0-foss-2025a.eb
 VIT Arrow-22.0.0-gfbf-2025a.eb
 VIT BgeeDB-2.36.0-foss-2025a-R-4.5.1.eb
