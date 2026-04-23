@@ -38,8 +38,6 @@ exts_default_options = {
 
 exts_defaultclass = 'RPackage'
 
-# TODO (sparqlr)
-
 # check whether correct version is installed in extension filter
 # (some versions in this bundle may be newer than the ones provided by R)
 local_ext_version_check = "pkgver = packageVersion('%(ext_name)s'); if (pkgver != '%(ext_version)s') "
@@ -82,6 +80,9 @@ exts_list = [
     }),
     ('topGO', '2.62.0', {
         'checksums': ['6bca31c56f2e71b763f7540a1b5b0ab197d36fd876b5f3f8d37e3b9bc928e9e1'],
+    }),
+    ('sparqlr', '0.1.0', {
+        'checksums': ['b9000ac56a0cfac62ca84c3fb7127ba62984275d755fff4d9037cbd0c0258c0c'],
     }),
     # ('sybil', '2.2.0', {
     #     'checksums': ['a555982c862b6ec6378796f5a020f829de94fa685bd4563dd553994faac08c15'],
