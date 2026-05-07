@@ -59,7 +59,7 @@ Pandoc-3.8.2.1.eb
 ## SIB Lausanne specific
 VIT R-bundle-extraSIB-20260402-foss-2025a-R-4.5.1.eb
 # is sybil still used?
-# VIT MetaNetX_Perl-20210806-GCCcore-10.3.0-Perl-5.32.1.eb
+VIT Perl-bundle-extraSIB-20260423-GCCcore-14.2.0.eb
 # VIT MetaNetX_Python-20220204-GCCcore-10.3.0.eb
 ## RDF/SPARQL oriented
 # VIT Virtuoso-opensource-7.2.6.1-GCC-10.3.0.eb
